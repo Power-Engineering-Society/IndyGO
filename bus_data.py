@@ -3,7 +3,8 @@
 # Date: 10/24/2020
 # Data analysis on the electric buses provided by Indigo
 ################################################################################
-#importing modules
+
+# importing modules
 import numpy as np
 import pandas as pd
 import csv
@@ -20,6 +21,7 @@ def busID(reader): #this function holds the bus list with just the bus IDs.
         bus.append(bus_id)
     return(bus)
 #sort the data accoring to each busID
+
 def sort():
     a = 0
     b = 0
@@ -33,7 +35,6 @@ def sort():
             #    bus_df.append(j[j['Bus No.'].apply(lambda state: state == id_num)].head())
     #print(all_data[0].iloc[0])
     #bus1.append(data[data['Bus No.'].apply(lambda state: state == "IG_1899")].head())
-    return()
 
 def sortData(data, bus): # Sorting the data over 30 days according to the bus number
     global i
