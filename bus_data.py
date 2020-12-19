@@ -56,7 +56,6 @@ def plot_bus(bus, ax):
     plt.ylabel('Energy Used (kWh)')
     #print(bus)
     #plt.show() #show plot
-    return()
 
 def ExtractAndsort_data():
     #Extracting data from csv files
@@ -65,6 +64,7 @@ def ExtractAndsort_data():
     bus_data = pd.DataFrame() # 2D->cols & rows (bus_data contains all the data)
 #defining lists
     li = [] #list that will contain all the data
+    
     buses = []
     bus1 = []
     bus2 = []
@@ -199,6 +199,7 @@ def filterData(bus,df): #elimate outliers using 3-sigma
             return(df.append(bus.drop([i])))
         i += 1
     return()
+
 def main():
     #plt.rcParams.update({'figure.max_open_warning': 0})
     fig, ax = plt.subplots()

@@ -1,8 +1,6 @@
-import numpy as np
+from numpy.lib.function_base import average
 import pandas as pd
-import csv
 import glob as gb
-import math
 import matplotlib.pyplot as plt
 
 def busID(reader):
@@ -62,6 +60,11 @@ def filterData(bus,df):
             return(df.append(bus.drop([i])))
         i += 1
 
+def pass_flow():
+    pass_data = pd.read_csv("VMH_Aaron_Summary.csv", index_col = None, header = 0)
+    diff_data = pass_data["Boardings"] - pass_data["Alightings"]
+    print(average(diff_data))
+
 def main():
     ax = plt.subplots()[1]
     data = []
@@ -95,4 +98,5 @@ def main():
     plt.show()
 
 if __name__ == "__main__":
+    pass_flow()
     main()
