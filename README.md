@@ -1,13 +1,22 @@
-# Purpose  
-The goal of this project is to provide **Indianapolis Public Transportation Corporation** (IndyGo) with analysis on how much energy of their electric buses is affected by external factors, i.e. passenger flow, weather conditions, bus's velocity. 
+# Project Goal  
+- Analyze **Indianapolis Public Transportation Corporation** (IndyGo) electric buses electric range.
+- Key factors for relatively ineffiecient energy range.  
 ## Content
 **IndyGo.zip**<br/>
-The **zip folder** contains a folder with telematic data collected by IndyGo for the buses of interest in .csv files. <br/>The .csv file names correspond to day of the collected data.<br/> Data provided in these files include information on SOC, Energy usage, distance travelled, the odometer reading of the buses, and passenger flow.<br/><br/>
+- Contains .CVS files with telematic data collected by IndyGo for the buses of interest. <br/> - The .csv file names correspond to day of the collected data.<br/>    - Data provided: SOC, Energy usage, distance travelled, odometer reading, and passenger flow.<br/><br/>
+
 **bus_data.py**<br/>
-This file contains the code in python for data analysis.<br/> 
-After downloading this file, change the path in the code to where the zip folder will be stored in your system.<br/>
-Functions have been incorporated so that any user may easily follow the code.<br/> 
-Data has been sorted according to the bus_ID's, filtered using the 3-sigma model to remove the outliers present, and further refined by taking out the points of no interest.<br/> 
+File contains the code in python.<br/> 
+Note: After downloading this file, change the path in the code to where the zip folder will be stored in your system.<br/>
+
+***Main***
+- Data is stored from *ExtractAndsort_data()*. in a data drame.
+  - *ExtractAndsort_data()*: sorts data according to bus ID.
+- for bus_data in data:
+  --Columns of no interest are removed in the for loop. 
+- for item in bus_data:
+  --Data is filtered using the 3-sigma methodology.<br/> 
+<br/> 
 The pass_flow function has been incorporated in order to analyze the effect of passenger flow.
 ### Contributions
 Any contributions to the code should be done on the `slave` branch. Only the code lead may push the code in the `main` branch.
