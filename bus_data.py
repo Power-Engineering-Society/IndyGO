@@ -60,11 +60,6 @@ def filterData(bus,df):
             return(df.append(bus.drop([i])))
         i += 1
 
-def pass_flow():
-    pass_data = pd.read_csv("VMH_Aaron_Summary.csv", index_col = None, header = 0)
-    diff_data = pass_data["Boardings"] - pass_data["Alightings"]
-#    print(average(diff_data))
-
 def main():
     ax = plt.subplots()[1]
     data = []
@@ -95,9 +90,8 @@ def main():
         bus_data.reset_index(drop=True, inplace = True)
         plot_bus(bus_data, ax)
     data = pd.concat(data, axis = 0, ignore_index = True)
-    print(bus_data)
+    # print(bus_data)
     plt.show()
 
 if __name__ == "__main__":
-    pass_flow()
     main()
