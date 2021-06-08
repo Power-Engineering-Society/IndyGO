@@ -25,13 +25,3 @@ python3 bus_data.py
 ## Usage
 
 ![Alt text](output.png?raw=true "Expected Output")
-
-## Support
-
-## Contributing
-
-## Authors and Acknowledgement
-
-## Resources
-
-## Project Status
