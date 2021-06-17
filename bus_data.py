@@ -3,6 +3,7 @@ import pandas as pd
 import glob as gb
 import matplotlib.pyplot as plt
 
+
 def busID(reader):
     global bus
     bus = []
@@ -11,6 +12,7 @@ def busID(reader):
         bus.append(bus_id)
     return(bus)
 
+
 def sortData(data, bus):
     bus_ID = ['IG_1899', 'IG_1970', 'IG_1971', 'IG_1971', 'IG_1972', 'IG_1973', 'IG_1974', 'IG_1975', 'IG_1976', 'IG_1977'
               'IG_1979', 'IG_1980', 'IG_1981', 'IG_1982', 'IG_1983', 'IG_1984', 'IG_1985', 'IG_1986', 'IG_1988', 'IG_1989'
@@ -18,11 +20,13 @@ def sortData(data, bus):
     bus.append(data[data['Bus No.'].apply(lambda state: state == bus_ID)].head())
     bus = pd.concat(bus, axis = 0, ignore_index = True)
 
+
 def plot_bus(bus, ax):
     ax.scatter(bus['Actual Distance'], bus['Energy Used'])
     plt.title('Energy Used Vs. Actual Distance')
     plt.xlabel('Distance Travelled (miles)')
     plt.ylabel('Energy Used (kWh)')
+
 
 def ExtractAndsort_data():
     path = r'Indigo'
@@ -48,6 +52,7 @@ def ExtractAndsort_data():
     li = pd.concat(li, axis = 0, ignore_index = True)
     return(buses)
 
+
 def filterData(bus,df):
     i = 0
     mean = bus["kWh/Miles"].mean()
@@ -59,6 +64,7 @@ def filterData(bus,df):
         else:
             return(df.append(bus.drop([i])))
         i += 1
+
 
 def main():
     ax = plt.subplots()[1]
@@ -92,6 +98,7 @@ def main():
     data = pd.concat(data, axis = 0, ignore_index = True)
     # print(bus_data)
     plt.show()
+
 
 if __name__ == "__main__":
     main()
